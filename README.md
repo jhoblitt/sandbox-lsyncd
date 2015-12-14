@@ -7,7 +7,7 @@ vagrant setup
     vagrant up --provider=virtualbox
 
     ssh-keygen -f id_rsa -N ""
-    perl -pi -e 's|^|command="/home/vagrant/.ssh/rsync_only.sh" |' id_rsa.pub
+    perl -pi -e 's|^|command="${HOME}/.ssh/rsync_only.sh" |' id_rsa.pub
     vagrant scp id_rsa src:/home/vagrant/.ssh/id_rsa
     vagrant scp id_rsa.pub dest:/home/vagrant/.ssh/id_rsa.pub
     vagrant scp rsync_only.sh dest:/home/vagrant/.ssh/rsync_only.sh
